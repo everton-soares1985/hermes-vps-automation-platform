@@ -4,6 +4,7 @@
 
 - Mode: `ads-marketing`
 - Use case: GitHub repository hero banner
-- Direction: a dark, credible operations control plane with a central orchestration core, scheduled jobs, watchdogs, isolated browser nodes, evidence storage, Telegram operations, and model routing; no embedded title or watermark.
+- Direction: a photorealistic engineering workstation with an ultrawide monitor showing the real platform flow—Oracle Cloud, Ubuntu Linux, Hermes Agent, OmniRoute, systemd, Docker, Python, Chromium/CDP, SQLite/JSON evidence, Telegram Bot API, and GitHub.
+- Intended use: GitHub README hero and LinkedIn engineering case-study artwork.
 
-The image is conceptual. It is not a screenshot of a production dashboard and does not contain production data.
+The image is a visual mockup, not a production screenshot. It contains no private host address, credential, account name, or operational dataset, and does not imply endorsement by the referenced technology vendors.

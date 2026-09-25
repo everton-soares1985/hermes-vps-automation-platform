@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced the generic conceptual hero with a photorealistic architecture
+  mockup designed for both the GitHub portfolio and LinkedIn case studies.
+
 ### Planned
 
 - Normalize partial-success and candidate-exhaustion exit codes.
