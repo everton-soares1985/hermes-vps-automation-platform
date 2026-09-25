@@ -1,0 +1,34 @@
+# CONTROLLER CONFIGURATION
+# Copy this file to config.toml only on the target host. Never commit secrets.
+
+[runtime]
+hermes_bin = "/opt/hermes/bin/hermes"
+profile = "builder"
+state_root = "/var/lib/hermes-builder/state"
+workspace_root = "/srv/hermes-builder/workspaces"
+timeout_seconds = 1800
+specify_bin = "/opt/hermes/bin/specify"
+
+[routes]
+architect = "builder-architect-v0"
+implementer = "builder-implementer-v0"
+reviewer = "builder-reviewer-v0"
+
+[limits]
+max_iterations = 3
+max_changed_files = 80
+max_changed_bytes = 5000000
+reviewer_retries = 2
+
+[gates]
+test_commands = ["python3 -m unittest discover -s tests -v"]
+require_clean_test_exit = true
+require_reviewer_approval = true
+
+[security]
+allowed_source_roots = ["/srv/hermes-builder/inputs"]
+protected_roots = [
+  "/srv/automation/production",
+  "/var/lib/hermes/profiles/default",
+  "/etc/hermes"
+]

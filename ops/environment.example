@@ -1,0 +1,10 @@
+# Copy to a protected deployment-only environment file (mode 0600).
+# Never commit the populated file.
+AUTOMATION_TIMEZONE=America/Sao_Paulo
+WELLFOUND_SAVED_ROOT=/srv/automation/wellfound-saved
+WELLFOUND_APPLY_ROOT=/srv/automation/wellfound-apply
+INFOJOBS_ROOT=/srv/automation/infojobs
+LINKEDIN_PROJECT_DIR=/srv/automation/linkedin-warmup
+LINKEDIN_WATCHDOG_STATE_DIR=/var/lib/hermes/watchdogs/linkedin
+WELLFOUND_CDP_URL=http://127.0.0.1:9224/json/version
+INFOJOBS_CDP_URL=http://127.0.0.1:9226/json/version

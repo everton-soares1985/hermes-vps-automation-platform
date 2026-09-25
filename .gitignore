@@ -1,0 +1,44 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+auth.json
+config.toml
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Runtime state and private operational data
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+logs/
+state/
+workspaces/
+artifacts/private/
+cron/jobs.json
+cron/executions.db
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+publisher-*.json

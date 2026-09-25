@@ -1,0 +1,17 @@
+[Unit]
+Description=Hermes Agent messaging gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.hermes
+EnvironmentFile=%h/.config/hermes/runtime.env
+ExecStart=%h/.hermes/hermes-agent/venv/bin/python -m hermes_cli.main gateway run
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

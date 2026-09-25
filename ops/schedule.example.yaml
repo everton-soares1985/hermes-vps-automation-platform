@@ -1,0 +1,39 @@
+# Human-readable reference manifest. Adapt it to the scheduler used by your
+# Hermes release; this is intentionally not a production jobs.json export.
+timezone: America/Sao_Paulo
+jobs:
+  - name: VPS daily preflight
+    cron: "20 10 * * *"
+    command: ops/scripts/vps_health_watchdog.sh
+    enabled: true
+    notify: failures_only
+  - name: Wellfound Saved daily
+    cron: "0 11 * * *"
+    command: ops/scripts/wellfound_saved_daily.sh
+    enabled: true
+    notify: completion_and_failure
+  - name: Wellfound External Saved Cleaner daily
+    cron: "0 12 * * *"
+    command: ops/scripts/wellfound_external_cleaner_daily.sh
+    enabled: true
+    notify: failures_only
+  - name: Wellfound Apply daily
+    cron: "0 15 * * *"
+    command: ops/scripts/wellfound_apply_daily.sh
+    enabled: true
+    notify: completion_and_failure
+  - name: InfoJobs Apply daily rotation
+    cron: "30 18 * * *"
+    command: ops/scripts/infojobs_apply_daily.sh
+    enabled: false
+    notify: completion_and_failure
+  - name: LinkedIn Warmup watchdog
+    cron: "0 21 * * 1-6"
+    command: ops/scripts/linkedin_health_watchdog.sh
+    enabled: true
+    notify: failures_only
+  - name: Daily automation report
+    cron: "0 22 * * *"
+    command: ops/scripts/daily_automation_report.sh
+    enabled: true
+    notify: always

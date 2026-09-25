@@ -1,0 +1,35 @@
+config_version: 33
+model:
+  default: builder-architect-v0
+  provider: custom
+  base_url: http://127.0.0.1:20128/v1
+  api_mode: chat_completions
+# Add the provider credential only in the private deployed profile. Load it
+# from the service environment according to the installed Hermes version.
+agent:
+  max_turns: 60
+  verify_on_stop: false
+terminal:
+  backend: docker
+  cwd: .
+  timeout: 180
+  docker_image: hermes-builder-runtime:0.1.0
+  container_cpu: 1.5
+  container_memory: 6144
+  container_disk: 20480
+  container_persistent: false
+  docker_mount_cwd_to_workspace: true
+  docker_network: true
+  docker_run_as_host_user: true
+  docker_persist_across_processes: false
+memory:
+  provider: ''
+  memory_enabled: false
+  user_profile_enabled: false
+display:
+  personality: none
+  reasoning: true
+  tool_progress: all
+plugins:
+  enabled: []
+_config_version: 33

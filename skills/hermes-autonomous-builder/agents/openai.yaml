@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hermes Autonomous Builder"
+  short_description: "Runs projects through three roles and deterministic gates"
+  default_prompt: "Use $hermes-autonomous-builder to execute an isolated project with architecture, implementation, independent review, and evidence."

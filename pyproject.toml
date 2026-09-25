@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-vps-automation-platform"
+version = "0.2.0"
+description = "Evidence-driven VPS automation control plane built around Hermes Agent and OmniRoute"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+license = { text = "MIT" }
+authors = [{ name = "Everton Soares" }]
+keywords = ["automation", "hermes", "omniroute", "systemd", "vps", "ai-agents"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+hermes-builder = "hermes_builder.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hermes_builder*"]
+
+[project.urls]
+Repository = "https://github.com/everton-soares1985/hermes-vps-automation-platform"
+Issues = "https://github.com/everton-soares1985/hermes-vps-automation-platform/issues"

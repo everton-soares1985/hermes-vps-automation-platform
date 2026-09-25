@@ -1,0 +1,19 @@
+[Unit]
+Description=On-demand isolated Chromium browser
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/hermes/runtime.env
+ExecStart=/usr/bin/chromium \
+  --headless=new \
+  --remote-debugging-address=127.0.0.1 \
+  --remote-debugging-port=${BROWSER_CDP_PORT} \
+  --user-data-dir=${BROWSER_PROFILE_DIR} \
+  --no-first-run \
+  about:blank
+Restart=no
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Keep this unit disabled. Start and stop it from the owning scheduler job.
